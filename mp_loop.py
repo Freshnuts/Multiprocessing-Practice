@@ -22,7 +22,7 @@ import time
 q = multiprocessing.Queue()
 
 def looper(q):
-    for i in range(10):
+    for i in range(20):
         print "Thread 1 loop: %d" % i
         time.sleep(1)
 
@@ -39,7 +39,8 @@ def main():
         print "\n't1' for thread 1"
         print "'t2' for thread 2"
         print "'t1shell' to initialize multiprocess.Process()"
-        print "'t1join' to lock on thread (Don't exit thread before it's done.)"
+        print "'t1join' lock thread AFTER initiated by 't1shell'."
+        print "'t1lock' to lock on thread from beginning"
         print "'q' for quit"
         read = raw_input("?: ")
         print read
@@ -59,6 +60,12 @@ def main():
             else:
                 print "p01 not initialized"
         elif read == "t1join":
+            if c > 0:
+                p01.join()
+            else:
+                print "p01 not initialized"
+                c = 0
+        elif read == "t1lock":
             if c > 0:
                 p01.start()
                 p01.join()
