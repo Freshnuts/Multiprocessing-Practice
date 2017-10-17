@@ -26,11 +26,12 @@ def looper(q):
         print "Thread 1 loop: %d" % i
         time.sleep(1)
 
-# in the MIDDLE of 't1' execution.
+
 # t1shell - p01.start() allows user to start thread t2, while t1 is looping.
 # t1join  - p01.start(), p01.join() LOCKS user in thread t1 execution until
 # it's done.
 # After initializing 't1' with 't1shell', use 't1join' to LOCK thread
+# in the MIDDLE of 't1' execution.
 
 def main():
     c = 0
