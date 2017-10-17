@@ -1,2 +1,3 @@
 # mp_loop
-Demonstrates 2 concurrent threads.
+Demonstrates Locking threads & using them concurrently.<br>
+
