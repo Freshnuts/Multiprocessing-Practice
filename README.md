@@ -6,7 +6,6 @@ practices, and standards.
 <h1>mp_loop</h1>
 
 Program creates a loop on multiple processes threads.<br>
-<br>
 1. t1 - Calls multiprocessing.Process().
 2. t1loop - Initializes multiprocessing.Process(). Aka - Calls looper()<br>
    on a seperate thread. NO LOCK.
