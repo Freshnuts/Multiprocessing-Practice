@@ -19,3 +19,7 @@ Jump in & out of interactive shells remotely
 
 Append elements to a global list on 'main' process, while
 seperate process threads increment 'l' by 1.
+
+<h2>proc_comm</h2>
+
+Interprocess communication. Send data between processes.
