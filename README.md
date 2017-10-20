@@ -1,9 +1,9 @@
 # Multiprocessing-Practice
 
-A script rep focusing on multiprocessing functions, methodologies,<br>
+A script repository focusing on multiprocessing functions, methodologies,<br>
 practices, and standards.
 
-#mp_loop
+<h1>mp_loop<h1>
 
 Essentially, this program creates a loop on multiprocessing threads.<br>
 <br>
