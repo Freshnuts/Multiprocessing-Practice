@@ -1,0 +1,28 @@
+mp_loop
+
+Creates a # loop on multiple processes threads. We can run the 2
+processes synchronously, or lock thread 1 down.
+
+1. t1 - Calls multiprocessing.Process().
+2. t1loop - Initializes multiprocessing.Process(). Aka - Calls looper()
+   on a seperate thread. NO LOCK.
+
+p01.start()
+
+*Calls looper() in a different process in the background, then we
+ return to the main process, meaning we can still access the menu.
+
+3. t1join - Lock thread AFTER t1 is initiated by t1loop.
+
+p01.join()  # Lock the process thread, until it is finished.
+
+*User can execute this at anytime the p01 is initiated.
+
+4. t1lock - Lock thread from the beginning.
+
+p01.start() # Start the process thread.
+p01.join()  # Lock the process thread, until it is finished.
+
+5. t2 - Creates process thread #2.
+
+6. t2loop - Starts the thread, and runs the loop function.
