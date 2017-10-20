@@ -3,7 +3,7 @@
 A script repository focusing on multiprocessing functions, methodologies,<br>
 practices, and standards.
 
-<h1>mp_loop<h1>
+<h1>mp_loop</h1>
 
 Essentially, this program creates a loop on multiprocessing threads.<br>
 <br>
