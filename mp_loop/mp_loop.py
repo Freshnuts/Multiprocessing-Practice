@@ -23,7 +23,7 @@ q = multiprocessing.Queue()
 
 def looper(q):
     for i in range(20):
-        print "Thread 1 loop: %d" % i
+        print "Thread loop: %d" % i
         time.sleep(1)
 
 
