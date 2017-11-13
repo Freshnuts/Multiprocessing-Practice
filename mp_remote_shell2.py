@@ -52,13 +52,16 @@ def acpt():
         i += 1
 
 def cmd():
-    print "====== OPEN CONNECTION ======="
-    print "%d: Target Connection: %s" % (i, addr)
-    conn.send("9j3b3k8")
-    print conn.recv(1024)
-    print "[+] Scan Complete"
-    print "[*] Closing Connection: %s", addr
-    print "====== CLOSED CONNECTION ======\n\n"
-    time.sleep(1)
+    try:
+        conn.send("9j3b3k8")
+        print "====== OPEN CONNECTION ======="
+        print "%d: Target Connection: %s" % (i, addr)
+        print conn.recv(1024)
+        print "[+] Scan Complete"
+        print "[*] Closing Connection: %s", addr
+        print "====== CLOSED CONNECTION ======\n\n"
+        time.sleep(1)
+    except:
+        print "Can't send command."
 
 acpt()
