@@ -42,20 +42,27 @@ s.listen(2)
 q = multiprocessing.Queue()
 
 
+
 def acpt():
     global i
     global conn
+    global addr
     i = 1
     while 1:
         conn, addr = s.accept()
-        print "====== OPEN CONNECTION ======="
-        print "%d: %s" % (i, addr)
-        conn.send("9j3b3k8")
-        print "command sent"
-        print conn.recv(1024)
-        print "Finished, Closing Connection for: %s", addr
-        print "====== CLOSED CONNECTION ======\n"
-        time.sleep(1)
+        p = multiprocessing.Process(target=cmd)
+        p.start()
+        p.join()
         i += 1
+
+def cmd():
+    print "====== OPEN CONNECTION ======="
+    print "%d: Target Connection: %s" % (i, addr)
+    conn.send("9j3b3k8")
+    print conn.recv(1024)
+    print "[+] Scan Complete"
+    print "[*] Closing Connection: %s", addr
+    print "====== CLOSED CONNECTION ======\n\n"
+    time.sleep(1)
 
 acpt()

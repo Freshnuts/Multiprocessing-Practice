@@ -13,8 +13,8 @@ s.connect((host, port))
 
 
 def scan_network():
-    s.send("[+] Scanning")
     os.system("nmap -sn 192.168.0.1/24 -oN /tmp/passwords")
+    s.send("[+] Scan Confirmed")
     print "Exiting"
 
 
