@@ -39,10 +39,6 @@ except:
 print "[+] Listening"
 s.listen(2)
 
-q = multiprocessing.Queue()
-
-
-
 def acpt():
     global i
     global conn
