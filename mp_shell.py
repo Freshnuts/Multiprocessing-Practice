@@ -45,7 +45,7 @@ def main():
             if c > 0:
                 p01.start()
                 p01.join()
-                p01 = multiprocessing.Process(target=looper, args=('q', ))
+                c -= 1
             else:
                 print "p01 not initialized"
         elif read == "t2shell":
